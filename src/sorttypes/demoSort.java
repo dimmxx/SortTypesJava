@@ -12,12 +12,11 @@ public class demoSort {
         PrintOutArray.printOutArray(intArrayOrigin);
 
         CloneArray clone = new CloneArray();
+        BubbleSort bubble = new BubbleSort();
 
         Object intCloneArray[] = clone.cloneArray(intArrayOrigin);
 
-        PrintOutArray.printOutArray(intCloneArray);
-
-        BubbleSort.bubbleSort(intArrayOrigin);
+        PrintOutArray.printOutArray(bubble.bubbleSort,
         PrintOutArray.printOutArray(intCloneArray);
 
     }
