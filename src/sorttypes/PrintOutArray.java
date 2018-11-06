@@ -1,13 +1,13 @@
 package sorttypes;
 
-public class PrintOutArray<T>{
+public class PrintOutArray {
 
-    public static void printOutArray(<T>[] array){
+    public static <T> void printOutArray (T[] array){
 
-        for (int i = 0; i < GenerateArray.getSIZE(); i++){
+        for (int i = 0; i < array.length; i++){
             System.out.print(array[i]);
         }
-
+        System.out.println();
 
     }
 

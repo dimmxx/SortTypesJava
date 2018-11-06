@@ -6,11 +6,11 @@ public class GenerateArray {
 
     private static char[] charBase = {' ', '!', '#', '$', '%', '&', '(', ')', '*', '+', ',', '-', '.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';', '<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '[', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}', '~'};
 
-    private static final int SIZE = 10;
+    private static final int SIZE = 3;
     private static final int WORDLENGTH = 10;
 
-    private static int[] intArray = new int[SIZE];
-    private static float[] floatArray = new float[SIZE];
+    private static Integer[] intArray = new Integer[SIZE];
+    private static Float[] floatArray = new Float[SIZE];
     private static String[] stringArray = new String[SIZE];
 
     private static Random random = new Random();
@@ -35,14 +35,14 @@ public class GenerateArray {
 
 // generate float array =======================================================================================
 
-    public static float[] generateFloatArray() {
+    public static Float[] generateFloatArray() {
         for (int i = 0; i < SIZE; i++) {floatArray[i] = random.nextFloat() * SIZE;}
         return floatArray;
     }
 
 // generate int array ==========================================================================================
 
-    public static int[] generateintArray() {
+    public static Integer[] generateIntArray() {
         for(int i = 0; i<SIZE;i++) { intArray[i] = random.nextInt(SIZE + 1);}
         return intArray;
     }
