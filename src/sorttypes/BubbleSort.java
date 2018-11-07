@@ -1,29 +1,18 @@
 package sorttypes;
 
-public class BubbleSort <T extends Comparable>{
+public class BubbleSort {
 
-    public T[] bubbleSort(T[] array){
+    public static int[] bubbleSort(int[] array){
 
         for(int i = 0; i < array.length - 1; i++){
             for(int k = 0; k < array.length - 1 - i; k++){
-                T temp = array[k];
-                if(array[k].compareTo(array[k + 1]) > 0){
+                int temp = array[k];
+                if(array[k] > array[k + 1]){
                     array[k] = array[k + 1];
                     array[k + 1] = temp;
-
                 }
             }
         }
-
-
-
-    return array;
-
+        return array;
     }
-
-
-
-
-
-
 }

@@ -3,22 +3,28 @@ import java.util.Arrays;
 
 public class demoSort {
 
+    public static final int [] intArrayOrigin = GenerateArray.generateIntArray();
+
+
     public static void main(String[] args) {
 
-        final Integer[] intArrayOrigin = GenerateArray.generateIntArray();
-        //final Float[] floatArrayOrigin = GenerateArray.generateFloatArray();
-        //final String[] stringArrayOrigin = GenerateArray.generateStringArray();
+        bubbleSort();
 
+
+
+
+    }
+
+    public static void bubbleSort(){
+        int[] cloneArray = CloneArray.cloneArray(intArrayOrigin);
+        long start = System.currentTimeMillis();
+        BubbleSort.bubbleSort(cloneArray);
+        long finish = System.currentTimeMillis();
+        long timeConsumedMillis = finish - start;
+        System.out.println("Bubble sort: ");
         PrintOutArray.printOutArray(intArrayOrigin);
-
-        CloneArray clone = new CloneArray();
-        BubbleSort bubble = new BubbleSort();
-
-        Object intCloneArray[] = clone.cloneArray(intArrayOrigin);
-
-        PrintOutArray.printOutArray(bubble.bubbleSort,
-        PrintOutArray.printOutArray(intCloneArray);
-
+        PrintOutArray.printOutArray(cloneArray);
+        System.out.println(""timeConsumedMillis + " ms");
     }
 
 

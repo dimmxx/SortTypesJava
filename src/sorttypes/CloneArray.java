@@ -1,19 +1,11 @@
 package sorttypes;
 
-public class CloneArray<T>{
+public class CloneArray{
 
-     public T[] cloneArray (T[] array){
+     public static int[] cloneArray (int[] array){
 
-         T[] clone = (T[]) new Object[array.length];
-         for(int i = 0; i < array.length; i++) clone[i] = array[i];
-
-
-
-
+        int[] clone =  new int[array.length];
+        for(int i = 0; i < array.length; i++) clone[i] = array[i];
         return clone;
         }
-
-
-
-
 }

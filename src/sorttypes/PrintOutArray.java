@@ -2,12 +2,17 @@ package sorttypes;
 
 public class PrintOutArray {
 
-    public static <T> void printOutArray (T[] array){
+    public static void printOutArray (int[] array){
 
+        System.out.print("[");
         for (int i = 0; i < array.length; i++){
-            System.out.print(array[i]);
+
+
+
+            if(i < array.length - 1) System.out.print(array[i] + ", ");
+            else System.out.println(array[i] + "]");
         }
-        System.out.println();
+        //System.out.println();
 
     }
 
