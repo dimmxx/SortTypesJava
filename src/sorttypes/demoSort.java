@@ -10,13 +10,17 @@ public class demoSort {
 
         bubbleSort();
 
+        StupidSort stupidSort = StupidSort.stupidSort();
+        PrintOutArray.printOutArray(stupidSort.getArray());
+        System.out.println(stupidSort.getTimeConsumedMillis());
+
 
 
 
     }
 
     public static void bubbleSort(){
-        int[] cloneArray = CloneArray.cloneArray(intArrayOrigin);
+        int[] cloneArray = CloneArray.cloneArray();
         long start = System.currentTimeMillis();
         BubbleSort.bubbleSort(cloneArray);
         long finish = System.currentTimeMillis();
@@ -24,7 +28,7 @@ public class demoSort {
         System.out.println("Bubble sort: ");
         PrintOutArray.printOutArray(intArrayOrigin);
         PrintOutArray.printOutArray(cloneArray);
-        System.out.println(""timeConsumedMillis + " ms");
+        System.out.println("Time elapsed: " + timeConsumedMillis + " ms");
     }
 
 
