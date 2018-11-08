@@ -1,0 +1,30 @@
+public static int[] bubbleSort(int[] array){
+
+        for(int i = 0; i < array.length - 1; i++){
+            for(int k = 0; k < array.length - 1 - i; k++){
+                int temp = array[k];
+                if(array[k] > array[k + 1]){
+                    array[k] = array[k + 1];
+                    array[k + 1] = temp;
+                }
+            }
+        }
+        return array;
+    }
+
+
+
+
+      public static void bubbleSort(){
+        int[] cloneArray = CloneArray.cloneArray();
+        long start = System.currentTimeMillis();
+        BubbleSort.bubbleSort(cloneArray);
+        long finish = System.currentTimeMillis();
+        long timeConsumedMillis = finish - start;
+        System.out.println("Bubble sort: ");
+        PrintOutArray.printOutArray(intArrayOrigin);
+        PrintOutArray.printOutArray(cloneArray);
+        System.out.println("Time elapsed: " + timeConsumedMillis + " ms");
+    }
+
+

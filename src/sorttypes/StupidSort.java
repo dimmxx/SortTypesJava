@@ -20,15 +20,16 @@ public class StupidSort {
 
         long start = System.currentTimeMillis();
 
+
         for(int i = 0; i < array.length - 1; i++){
-            for(int k = 0; k < array.length - 1 - i; k++){
-                int temp = array[k];
-                if(array[k] > array[k + 1]){
-                    array[k] = array[k + 1];
-                    array[k + 1] = temp;
-                }
+            int temp = array[i];
+            if (array[i] > array[i + 1]){
+                array[i] = array[i + 1];
+                array[i + 1] = temp;
+                i = -1;
             }
         }
+
 
         long end = System.currentTimeMillis();
         long timeConsumedMillis = end - start;

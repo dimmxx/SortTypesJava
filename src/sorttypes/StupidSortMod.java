@@ -1,11 +1,11 @@
 package sorttypes;
 
-public class BubbleSort {
+public class StupidSortMod {
 
     private int[] array;
     private long timeConsumedMillis;
 
-    public BubbleSort(int[] array, long timeConsumedMillis){
+    public StupidSortMod(int[] array, long timeConsumedMillis){
         this.array = array;
         this.timeConsumedMillis = timeConsumedMillis;
     }
@@ -13,22 +13,27 @@ public class BubbleSort {
     public int[] getArray(){return array;}
     public long getTimeConsumedMillis(){return timeConsumedMillis;}
 
-    public static BubbleSort bubbleSort(){
+    public static StupidSortMod stupidSortMod(){
         int[] array = CloneArray.cloneArray();
+
         long start = System.currentTimeMillis();
 
+
+        int k = 0;
         for(int i = 0; i < array.length - 1; i++){
-            for(int k = 0; k < array.length - 1 - i; k++){
-                int temp = array[k];
-                if(array[k] > array[k + 1]){
-                    array[k] = array[k + 1];
-                    array[k + 1] = temp;
-                }
+            int temp = array[i];
+
+            if (array[i] > array[i + 1]){
+                array[i] = array[i + 1];
+                array[i + 1] = temp;
+                k = i;
             }
         }
+
+
         long end = System.currentTimeMillis();
         long timeConsumedMillis = end - start;
 
-        return new BubbleSort (array, timeConsumedMillis);
+        return new StupidSortMod (array, timeConsumedMillis);
     }
 }
