@@ -2,6 +2,7 @@ package sorttypes;
 
 public class StupidSort {
 
+    private String name = "StupidSort";
     private int[] array;
     private long timeConsumedMillis;
 
@@ -14,13 +15,9 @@ public class StupidSort {
     public long getTimeConsumedMillis(){return timeConsumedMillis;}
 
 
-
     public static StupidSort stupidSort(){
         int[] array = CloneArray.cloneArray();
-
         long start = System.currentTimeMillis();
-
-
         for(int i = 0; i < array.length - 1; i++){
             int temp = array[i];
             if (array[i] > array[i + 1]){
@@ -29,11 +26,17 @@ public class StupidSort {
                 i = -1;
             }
         }
-
-
         long end = System.currentTimeMillis();
         long timeConsumedMillis = end - start;
-
         return new StupidSort (array, timeConsumedMillis);
     }
+
+    public void printOut(){
+        System.out.println();
+        System.out.println(name + " (length " + array.length + ")" + ":");
+        PrintOutArray.printOutArray(demoSort.intArrayOrigin);
+        PrintOutArray.printOutArray(array);
+        System.out.println("Time elapsed: " + timeConsumedMillis + "ms");
+    }
 }
+

@@ -8,15 +8,16 @@ public class demoSort {
 
     public static void main(String[] args) {
 
-
-
         StupidSort stupidSortItem = StupidSort.stupidSort();
-        PrintOutArray.printOutArray(stupidSortItem.getArray());
-        System.out.println(stupidSortItem.getTimeConsumedMillis() + " ms" + "\n");
+        stupidSortItem.printOut();
 
         BubbleSort bubbleSortItem = BubbleSort.bubbleSort();
-        PrintOutArray.printOutArray(bubbleSortItem.getArray());
-        System.out.println(bubbleSortItem.getTimeConsumedMillis() + " ms" + "\n");
+        bubbleSortItem.printOut();
+
+        ShakerSort shakerSortItem = ShakerSort.shakerSort();
+        shakerSortItem.printOut();
+
+
 
 
 
