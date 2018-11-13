@@ -13,28 +13,25 @@ public class InsertionSort {
     public int[] getArray(){return array;}
     public long getTimeConsumedMillis(){return timeConsumedMillis;}
 
+
     public static InsertionSort insertionSort(){
-        int[] array = CloneArray.cloneArray();
+        int[] array = {9, 3, 5, 6, 2};
+        //int[] array = CloneArray.cloneArray();
         long start = System.currentTimeMillis();
 
         for (int i = 0; i < array.length - 1; i++){
             int temp = array[i + 1];
             if (temp < array[i]) {
 
-                int pos = -1;
+                int pos = 0;
                 for (int k = i; k > 0; k--) {
                     if (temp > array[k - 1]) pos = k;
                 }
 
-                int dest = array[pos];
-                array[pos] = temp;
-
-
-
-
-            }
-
+                for(int j = i + 1; j > pos; j--) {
+                    array[j] = array[j -1];
                 }
+                array[pos] = temp;
 
             }
 

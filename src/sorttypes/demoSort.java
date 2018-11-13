@@ -20,6 +20,10 @@ public class demoSort {
             ShakerSort shakerSortItem = ShakerSort.shakerSort();
             shakerSortItem.printOut();
 
+            InsertionSort insertionSortItem = InsertionSort.insertionSort();
+            insertionSortItem.printOut();
+
+
 
     }
 
