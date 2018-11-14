@@ -6,6 +6,8 @@ public class demoSort {
 
     public static void main(String[] args) {
 
+        for(int i = 0; i < 1; i++) {
+
             intArrayOrigin = GenerateArray.generateIntArray();
 
             StupidSort stupidSortItem = StupidSort.stupidSort();
@@ -17,13 +19,18 @@ public class demoSort {
             BubbleSort bubbleSortItem = BubbleSort.bubbleSort();
             bubbleSortItem.printOut();
 
+            CombSort combSortItem = CombSort.combSort();
+            combSortItem.printOut();
+
             ShakerSort shakerSortItem = ShakerSort.shakerSort();
             shakerSortItem.printOut();
 
             InsertionSort insertionSortItem = InsertionSort.insertionSort();
             insertionSortItem.printOut();
 
+            System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
 
+        }
 
     }
 

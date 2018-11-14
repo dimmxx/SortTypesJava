@@ -40,8 +40,7 @@ public class InsertionSort {
         long timeConsumedMillis = end - start;
         return new InsertionSort (array, timeConsumedMillis);
     }
-
-
+    
     public static void relocate(int index, int dest, int[] array, int item){
         for (int j = index + 1; j > dest; j--) {
             array[j] = array[j - 1];
