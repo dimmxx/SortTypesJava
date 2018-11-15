@@ -23,11 +23,13 @@ public class CombSort {
         int gap = (int) gapD;
 
         while (gap != 1){
-            
 
+            for(int i = 0; i < array.length; i += (int) array.length / gap){
+                if (array[i] > array[i + gap]) swap(array, i, i + gap);
+            }
+
+            gap /= 1.247;
         }
-
-
 
 
 
@@ -42,6 +44,7 @@ public class CombSort {
         array[ind1] = array[ind2];
         array[ind2] = temp;
     }
+
 
     public void printOut(){
         System.out.println();
