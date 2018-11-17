@@ -28,12 +28,24 @@ public class demoSort {
             InsertionSort insertionSortItem = InsertionSort.insertionSort();
             insertionSortItem.printOut();
 
+            SelectionSort selectionSortItem = SelectionSort.selectionSort();
+            selectionSortItem.printOut();
+
+            ShellSort shellSortItem = ShellSort.shellSort();
+            shakerSortItem.printOut();
+
             System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
 
         }
 
     }
 
+    private void printSummary(){
+        System.out.println();
+
+
+
+    }
 
 
 }
