@@ -16,13 +16,26 @@ public class ShellSort {
 
     public static ShellSort shellSort(){
         int[] array = CloneArray.cloneArray();
+        //int[] array = {3, 5, 0, 1, 4, 3};
         long start = System.currentTimeMillis();
 
+        int gap = array.length / 2;
 
+        while (gap != 1){
+            for (int i = 0; i < gap - 1; i++){
+                if (array[i] > array[i + gap]) CombSort.swap(array, i, i + gap);
+            }
+            gap /= 2;
+        }
 
-
-
-
+        //Selection Sort
+        for(int i = 0; i < array.length; i++){
+            int min = i;
+            for(int k = i + 1; k < array.length; k++){
+                if(array[k] < array[min]) min = k;
+            }
+            if(min != i) CombSort.swap(array, i, min);
+        }
 
         long end = System.currentTimeMillis();
         long timeConsumedMillis = end - start;
