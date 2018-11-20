@@ -81,8 +81,8 @@ public class demoSort {
                + " Average time: " + averageTimeConsumed(summaryShell) / summaryShell.length + " ms");
     }
 
-    private static long averageTimeConsumed (long summaryArray[]){
-        long average = 0;
+    private static float averageTimeConsumed (long summaryArray[]){
+        float average = 0;
         for (int i = 0; i < summaryArray.length; i++){
             average += summaryArray[i];
         }
