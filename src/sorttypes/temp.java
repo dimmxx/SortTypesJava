@@ -4,14 +4,12 @@ import java.util.Arrays;
 
 public class temp {
 
-    static int[] array = {1, 8, 2, 7, 1, 2, 7};
+    static int[] array = {1, 2, 7, 7, 1, 2, 7};
 
     public static void main(String[] args) {
 
         int start = 0;
         int end = array.length - 1;
-
-
 
         rellocateQ(start, end);
     }
@@ -23,6 +21,8 @@ public class temp {
             for (int i = start; i < pivot; i++) {
                 if (array[i] > array[pivot]){
                     pivot = move(i, pivot);
+                    i--;
+                    System.out.println(pivot);
 
                 }
 
@@ -32,24 +32,16 @@ public class temp {
         System.out.println(Arrays.toString(array));
 
 
-
-
-
     }
-
 
     public static int move (int ndx, int pivot){
         int tempI = array[ndx];
         //array[pivot] = array[ndx];
-        for (int i = ndx; i < pivot; i++) {
+        for (int i = ndx; i <= pivot; i++) {
             array[i] = array[i + 1];
         }
         array[pivot] = tempI;
         pivot--;
-
-
-
-
 
         return pivot;
 
