@@ -6,7 +6,7 @@ public class demoSort {
 
     public static int [] intArrayOrigin = new int[GenerateArray.getSIZE()];
 
-    private final static int RUNS = 5;
+    private final static int RUNS = 1;
 
     private static long[] summaryStupid = new long[RUNS];
     private static long[] summaryGnome = new long[RUNS];
@@ -16,6 +16,7 @@ public class demoSort {
     private static long[] summaryInsertion = new long[RUNS];
     private static long[] summarySelection = new long[RUNS];
     private static long[] summaryShell = new long[RUNS];
+    private static long[] summaryQuick = new long[RUNS];
 
     public static void main(String[] args) {
 
@@ -54,6 +55,10 @@ public class demoSort {
             ShellSort shellSortItem = ShellSort.shellSort();
             summaryShell[i] = shellSortItem.getTimeConsumedMillis();
             shellSortItem.printOut();
+            //#9
+            QuickSort quickSortItem = QuickSort.quickSort();
+            summaryQuick[i] = quickSortItem.getTimeConsumedMillis();
+            quickSortItem.printOut();
 
             System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
@@ -79,6 +84,10 @@ public class demoSort {
                + " Average time: " + averageTimeConsumed(summarySelection) / summarySelection.length + " ms");
         System.out.println("Shell Sort:     " + Arrays.toString(summaryShell)
                + " Average time: " + averageTimeConsumed(summaryShell) / summaryShell.length + " ms");
+        System.out.println("Quick Sort:     " + Arrays.toString(summaryQuick)
+               + " Average time: " + averageTimeConsumed(summaryQuick) / summaryQuick.length + " ms");
+
+
     }
 
     private static float averageTimeConsumed (long summaryArray[]){

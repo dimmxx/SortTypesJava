@@ -1,24 +1,50 @@
 package sorttypes;
 
-import java.util.Arrays;
+public class QuickSort {
 
-public class temp {
+    private String name = "QuickSort";
+    private int[] array;
+    private long timeConsumedMillis;
 
-    static int[] array = {8, 7, 5, 3, 1, 3, 9, 4};
+    public QuickSort(int[] array, long timeConsumedMillis){
+        this.array = array;
+        this.timeConsumedMillis = timeConsumedMillis;
+    }
 
-    public static void main(String[] args) {
+    public int[] getArray(){return array;}
+    public long getTimeConsumedMillis(){return timeConsumedMillis;}
+
+
+    public static QuickSort quickSort(){
+        int[] array = CloneArray.cloneArray();
+        long start = System.currentTimeMillis();
+ //----------------------------------------------------------------------------------------------
 
         int startPos = 0;
         int endPos = array.length - 1;
 
         rellocateQ(startPos, endPos, array);
+
+//------------------------------------------------------------------------------------------------
+        long end = System.currentTimeMillis();
+        long timeConsumedMillis = end - start;
+        return new QuickSort (array, timeConsumedMillis);
     }
+
+    public void printOut(){
+        System.out.println();
+        System.out.println(name + " (length " + array.length + ")" + ":");
+        PrintOutArray.printOutArray(demoSort.intArrayOrigin);
+        PrintOutArray.printOutArray(array);
+        System.out.println("Time elapsed: " + timeConsumedMillis + "ms");
+    }
+
 
     public static void rellocateQ (int startPos, int endPos, int[] array) {
 
         if (endPos > startPos + 1) {
             int pivot = (startPos + endPos) / 2;
-            System.out.println("begin " + pivot);
+            //System.out.println("begin " + pivot);
 
             for (int i = startPos; i < pivot; i++) {
                 if (array[i] > array[pivot]) {
@@ -32,10 +58,9 @@ public class temp {
                 if (array[k] < array[pivot]) {
                     pivot = moveRight(k, pivot, array);
                     k++;
-                    System.out.println("right " + pivot);
+                    //System.out.println("right " + pivot);
                 }
             }
-
 
             int med = (startPos + endPos) / 2;
 
@@ -43,8 +68,7 @@ public class temp {
             rellocateQ(med, endPos, array);
         }
 
-    System.out.println(Arrays.toString(array));
-
+        //System.out.println(Arrays.toString(array));
     }
 
     public static int moveLeft (int ndx, int pivot, int[] array){
@@ -61,11 +85,23 @@ public class temp {
     public static int moveRight (int ndx, int pivot, int[] array){
         int tempI = array[ndx];
         //array[pivot] = array[ndx];
-        for (int i = ndx; i > pivot; i--) {
+        for (int i = ndx; i >= pivot; i--) {
             array[i] = array[i - 1];
         }
         array[pivot] = tempI;
         pivot++;
         return pivot;
     }
+
+
+
+
+
+
+
+
+
+
+
+
 }
