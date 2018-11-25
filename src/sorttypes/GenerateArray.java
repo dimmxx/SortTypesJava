@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class GenerateArray {
 
-    private static int SIZE = 10;
+    private static int SIZE = 500;
 
     private static int[] intArray = new int[SIZE];
 

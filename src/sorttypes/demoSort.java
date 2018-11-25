@@ -6,7 +6,7 @@ public class demoSort {
 
     public static int [] intArrayOrigin = new int[GenerateArray.getSIZE()];
 
-    private final static int RUNS = 1;
+    private final static int RUNS = 3;
 
     private static long[] summaryStupid = new long[RUNS];
     private static long[] summaryGnome = new long[RUNS];
