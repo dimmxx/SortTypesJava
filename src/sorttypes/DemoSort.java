@@ -2,7 +2,7 @@ package sorttypes;
 
 import java.util.Arrays;
 
-public class demoSort {
+public class DemoSort {
 
     public static int [] intArrayOrigin = new int[GenerateArray.getSIZE()];
 

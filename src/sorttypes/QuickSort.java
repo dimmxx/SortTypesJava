@@ -40,7 +40,7 @@ public class QuickSort {
     public void printOut() {
         System.out.println();
         System.out.println(name + " (length " + array.length + ")" + ":");
-        PrintOutArray.printOutArray(demoSort.intArrayOrigin);
+        PrintOutArray.printOutArray(DemoSort.intArrayOrigin);
         PrintOutArray.printOutArray(array);
         System.out.println("Time elapsed: " + timeConsumedMillis + "ms");
     }
