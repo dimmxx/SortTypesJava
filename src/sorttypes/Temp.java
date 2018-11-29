@@ -9,37 +9,24 @@ public class Temp {
     public static void main(String[] args) {
 
 
+
+    }
+
+    public static void split (int [] array){
+
         int left = 0;
         int right = array.length -1;
 
-
-        System.out.println(Arrays.toString(split(left, right)));
-
-        //split(left, right);
-
-
-
-
-    }
-
-    public static int[] split (int left, int right){
-
-
-
         if (right >= left){
             int mid = (right - left + 1) / 2;
-            split(left, mid);
-            split(mid + 1, right);
+            split(mergeSort(left, mid));
+            split(mergeSort(mid + 1, right));
+
+            //                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     split(mid + 1, right);
         }
 
-        return mergeSort(left, right);
-
-
-
+        System.out.println();
     }
-
-
-
 
     public static int[] mergeSort (int left, int right){
 
@@ -49,9 +36,8 @@ public class Temp {
 
         for(int i = 0; i < array1.length; i++) array1[i] = array[i];
         for (int i = 0; i < array2.length; i++) array2[i] = array[i + mid + 1];
-        System.out.println(Arrays.toString(array1));
-        System.out.println(Arrays.toString(array2));
-
+        //System.out.println(Arrays.toString(array1));
+        //System.out.println(Arrays.toString(array2));
 
         int[] arrayRes = new int[array1.length + array2.length];
         int pointer1 = 0;
