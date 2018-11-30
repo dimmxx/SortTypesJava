@@ -17,6 +17,7 @@ public class DemoSort {
     private static long[] summarySelection = new long[RUNS];
     private static long[] summaryShell = new long[RUNS];
     private static long[] summaryQuick = new long[RUNS];
+    private static long[] summaryMerge = new long[RUNS];
 
     public static void main(String[] args) {
 
@@ -59,6 +60,10 @@ public class DemoSort {
             QuickSort quickSortItem = QuickSort.quickSort();
             summaryQuick[i] = quickSortItem.getTimeConsumedMillis();
             quickSortItem.printOut();
+            //#10
+            MergeSort mergeSortItem = MergeSort.mergeSort();
+            summaryMerge[i] = mergeSortItem.getTimeConsumedMillis();
+            mergeSortItem.printOut();
 
             System.out.println("----------------------------------------------------------------------------------------------------------------------------------------------------------");
         }
@@ -86,6 +91,8 @@ public class DemoSort {
                + " Average time: " + averageTimeConsumed(summaryShell) / summaryShell.length + " ms");
         System.out.println("Quick Sort:     " + Arrays.toString(summaryQuick)
                + " Average time: " + averageTimeConsumed(summaryQuick) / summaryQuick.length + " ms");
+        System.out.println("Merge Sort:     " + Arrays.toString(summaryMerge)
+               + " Average time: " + averageTimeConsumed(summaryMerge) / summaryMerge.length + " ms");
 
 
     }

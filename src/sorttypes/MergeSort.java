@@ -2,16 +2,53 @@ package sorttypes;
 
 import java.util.Arrays;
 
-public class Temp {
+public class MergeSort {
 
-    static int[] array = {8, 7, 9};
+    private String name = "MergeSort";
+    private int[] array;
+    private long timeConsumedMillis;
 
-    public static void main(String[] args) {
-
-        System.out.println(Arrays.toString(split(array)));
+    public MergeSort(int[] array, long timeConsumedMillis) {
+        this.array = array;
+        this.timeConsumedMillis = timeConsumedMillis;
     }
 
-    public static int[] split(int[] array) {
+    public int[] getArray() {
+        return array;
+    }
+
+    public long getTimeConsumedMillis() {
+        return timeConsumedMillis;
+    }
+
+
+    public static MergeSort mergeSort() {
+        int[] array = CloneArray.cloneArray();
+        long start = System.currentTimeMillis();
+
+//----------------------------------------------------------------------------------------------
+
+        split(array);
+
+
+
+
+
+//------------------------------------------------------------------------------------------------
+        long end = System.currentTimeMillis();
+        long timeConsumedMillis = end - start;
+        return new MergeSort(array, timeConsumedMillis);
+    }
+
+    public void printOut() {
+        System.out.println();
+        System.out.println(name + " (length " + array.length + ")" + ":");
+        PrintOutArray.printOutArray(DemoSort.intArrayOrigin);
+        PrintOutArray.printOutArray(array);
+        System.out.println("Time elapsed: " + timeConsumedMillis + "ms");
+    }
+
+     public static int[] split(int[] array) {
         int len = array.length;
         if (len < 2) {
             return array;
@@ -53,7 +90,7 @@ public class Temp {
                 }
             }
         }
-        System.out.println(Arrays.toString(arrayRes));
+        //System.out.println(Arrays.toString(arrayRes));
         return arrayRes;
     }
 }
