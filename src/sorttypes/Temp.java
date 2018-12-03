@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Temp {
 
-    static int[] array = {8, 7, 9};
+    static int[] array = {8, 7, 9, 1};
 
     public static void main(String[] args) {
 

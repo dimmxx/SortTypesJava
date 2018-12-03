@@ -6,11 +6,12 @@ public class DemoSort {
 
     public static int [] intArrayOrigin = new int[GenerateArray.getSIZE()];
 
-    private final static int RUNS = 3;
+    private final static int RUNS = 10;
 
     private static long[] summaryStupid = new long[RUNS];
     private static long[] summaryGnome = new long[RUNS];
     private static long[] summaryBubble = new long[RUNS];
+    private static long[] summaryBubbleMod = new long[RUNS];
     private static long[] summaryComb = new long[RUNS];
     private static long[] summaryShaker = new long[RUNS];
     private static long[] summaryInsertion = new long[RUNS];
@@ -24,6 +25,7 @@ public class DemoSort {
         for(int i = 0; i < RUNS; i++) {
 
             intArrayOrigin = GenerateArray.generateIntArray();
+
             //#1
             StupidSort stupidSortItem = StupidSort.stupidSort();
             summaryStupid[i] = stupidSortItem.getTimeConsumedMillis();
@@ -37,30 +39,34 @@ public class DemoSort {
             summaryBubble[i] = bubbleSortItem.getTimeConsumedMillis();
             bubbleSortItem.printOut();
             //#4
+            BubbleSortMod bubbleSortModItem = BubbleSortMod.bubbleSortMod();
+            summaryBubbleMod[i] = bubbleSortModItem.getTimeConsumedMillis();
+            bubbleSortModItem.printOut();
+            //#5
             CombSort combSortItem = CombSort.combSort();
             summaryComb[i] = combSortItem.getTimeConsumedMillis();
             combSortItem.printOut();
-            //#5
+            //#6
             ShakerSort shakerSortItem = ShakerSort.shakerSort();
             summaryShaker[i] = shakerSortItem.getTimeConsumedMillis();
             shakerSortItem.printOut();
-            //#6
+            //#7
             InsertionSort insertionSortItem = InsertionSort.insertionSort();
             summaryInsertion[i] = insertionSortItem.getTimeConsumedMillis();
             insertionSortItem.printOut();
-            //#7
+            //#8
             SelectionSort selectionSortItem = SelectionSort.selectionSort();
             summarySelection[i] = selectionSortItem.getTimeConsumedMillis();
             selectionSortItem.printOut();
-            //#8
+            //#9
             ShellSort shellSortItem = ShellSort.shellSort();
             summaryShell[i] = shellSortItem.getTimeConsumedMillis();
             shellSortItem.printOut();
-            //#9
+            //#10
             QuickSort quickSortItem = QuickSort.quickSort();
             summaryQuick[i] = quickSortItem.getTimeConsumedMillis();
             quickSortItem.printOut();
-            //#10
+            //#11
             MergeSort mergeSortItem = MergeSort.mergeSort();
             summaryMerge[i] = mergeSortItem.getTimeConsumedMillis();
             mergeSortItem.printOut();
@@ -73,25 +79,27 @@ public class DemoSort {
     }
 
     private static void printSummary(){
-        System.out.println("Stupid Sort:    " + Arrays.toString(summaryStupid)
+        System.out.println("Stupid Sort:        " + Arrays.toString(summaryStupid)
                + " Average time: " + averageTimeConsumed(summaryStupid) / summaryStupid.length + " ms");
-        System.out.println("Gnome Sort:     " + Arrays.toString(summaryGnome)
+        System.out.println("Gnome Sort:         " + Arrays.toString(summaryGnome)
                + " Average time: " + averageTimeConsumed(summaryGnome) / summaryGnome.length + " ms");
-        System.out.println("Bubble Sort:    " + Arrays.toString(summaryBubble)
+        System.out.println("Bubble Sort:        " + Arrays.toString(summaryBubble)
                + " Average time: " + averageTimeConsumed(summaryBubble) / summaryBubble.length + " ms");
-        System.out.println("Comb Sort:      " + Arrays.toString(summaryComb)
+        System.out.println("Bubble Sort Mod:    " + Arrays.toString(summaryBubbleMod)
+               + " Average time: " + averageTimeConsumed(summaryBubbleMod) / summaryBubbleMod.length + " ms");
+        System.out.println("Comb Sort:          " + Arrays.toString(summaryComb)
                + " Average time: " + averageTimeConsumed(summaryComb) / summaryComb.length + " ms" );
-        System.out.println("Shaker Sort:    " + Arrays.toString(summaryShaker)
+        System.out.println("Shaker Sort:        " + Arrays.toString(summaryShaker)
                + " Average time: " + averageTimeConsumed(summaryShaker) / summaryShaker.length + " ms");
-        System.out.println("Insertion Sort: " + Arrays.toString(summaryInsertion)
+        System.out.println("Insertion Sort:     " + Arrays.toString(summaryInsertion)
                + " Average time: " + averageTimeConsumed(summaryInsertion) / summaryInsertion.length + " ms");
-        System.out.println("Selection Sort: " + Arrays.toString(summarySelection)
+        System.out.println("Selection Sort:     " + Arrays.toString(summarySelection)
                + " Average time: " + averageTimeConsumed(summarySelection) / summarySelection.length + " ms");
-        System.out.println("Shell Sort:     " + Arrays.toString(summaryShell)
+        System.out.println("Shell Sort:         " + Arrays.toString(summaryShell)
                + " Average time: " + averageTimeConsumed(summaryShell) / summaryShell.length + " ms");
-        System.out.println("Quick Sort:     " + Arrays.toString(summaryQuick)
+        System.out.println("Quick Sort:         " + Arrays.toString(summaryQuick)
                + " Average time: " + averageTimeConsumed(summaryQuick) / summaryQuick.length + " ms");
-        System.out.println("Merge Sort:     " + Arrays.toString(summaryMerge)
+        System.out.println("Merge Sort:         " + Arrays.toString(summaryMerge)
                + " Average time: " + averageTimeConsumed(summaryMerge) / summaryMerge.length + " ms");
 
 
